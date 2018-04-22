@@ -1,24 +1,19 @@
-import React, { Component } from 'react';
-import ReactDOM, { render } from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './index.css';
-import { TodoApp } from './components/TodoApp';
+import TodoApp from './contaniers/TodoApp';
 import { createStore } from 'redux';
-import { inputTask, addTask } from './actions/tasksActionCreator';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { tasksReducer } from './reducers/tasksReducer';
 
 const store = createStore(tasksReducer);
 
-function renderApp(store) {
-  render(
-    <TodoApp store={store} />,
-    document.getElementById('root')
-  )
-}
-
-store.subscribe(()=>renderApp(store));
-renderApp(store);
-
-// ReactDOM.render(
-//   <App />, 
-//   document.getElementById('root')
-// );
+ReactDOM.render(
+  <Provider store={store}>
+    <Router>
+      <TodoApp />
+    </Router>
+  </Provider>, 
+  document.getElementById('root')
+);
