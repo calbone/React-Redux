@@ -8,7 +8,7 @@ export const inputTask = (task) =>({
 });
 
 export const addTask = (task) => ({
-  type: ADDTASK,
+  type: 'ADD_TASK',
   payload: {
     task
   }
