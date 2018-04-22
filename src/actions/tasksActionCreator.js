@@ -1,14 +1,15 @@
+const INPUTTASK = 'INPUT_TASK';
 const ADDTASK = 'ADD_TASK';
 
 export const inputTask = (task) =>({
-  type: 'INPUT_TASK',
+  type: INPUTTASK,
   payload: {
     task
   }
 });
 
 export const addTask = (task) => ({
-  type: 'ADD_TASK',
+  type: ADDTASK,
   payload: {
     task
   }
