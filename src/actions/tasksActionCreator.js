@@ -13,6 +13,7 @@ export const addTask = (task) => ({
     task
   }
 });
+
 export const resetTask = (task) => ({
   type: 'RESET_TASK'
 });
