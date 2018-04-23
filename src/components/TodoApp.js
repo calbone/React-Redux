@@ -6,13 +6,13 @@ export function TodoApp({task, tasks, inputTask, addTask}) {
       <input type="text" onChange={(e)=>inputTask(e.target.value)} />
       <input type="button" value="add" onClick={()=>addTask(task)} />
       <ul>
-        {
+        {/* {
           tasks.map((item, i)=>{
             return (
               <li key={i}>{item}</li>
             )
           })
-        }
+        } */}
       </ul>
     </div>  
   )
