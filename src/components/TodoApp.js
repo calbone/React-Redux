@@ -5,6 +5,7 @@ export function TodoApp({task, tasks, inputTask, addTask}) {
     <div>
       <input type="text" onChange={(e)=>inputTask(e.target.value)} />
       <input type="button" value="add" onClick={()=>addTask(task)} />
+      <p className="hoge">テキスト</p>
       <ul>
         {/* {
           tasks.map((item, i)=>{
