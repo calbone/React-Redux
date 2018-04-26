@@ -30,10 +30,8 @@ module.exports = {
             { 
               loader: 'css-loader',
               options: {
-                modules: true,
-                localIdentName: '[path][name]__[local]--[hash]',
                 // CSS内のurl()メソッドの取り込みを禁止する
-                url: false,
+                url: true,
                 // CSSの空白文字を削除する
                 minimize: true,
                 // ソースマップを有効にする
@@ -62,9 +60,18 @@ module.exports = {
                 // ソースマップの利用有無
                 sourceMap: enabledSourceMap,
               }
-            }
+            },
           ]
       },
+      {
+        // 対象となるファイルの拡張子
+        test: /\.(gif|png|jpg|eot|wof|woff|ttf|svg)$/,
+        // 画像を埋め込まず任意のフォルダに保存する
+        loader: 'file-loader',
+        options: {
+          name: './images/[name].[ext]'
+        }
+      }
     ]
   },
   plugins: [
