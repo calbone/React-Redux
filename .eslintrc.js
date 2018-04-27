@@ -1,40 +1,40 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
     es6: true
   },
   extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended'
   ],
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
-      ecmaVersion: 2017,
       jsx: true
     },
-    sourceType: "module"
+    sourceType: 'module',
+    ecmaVersion: 2017
   },
-  plugins: ["react"],
+  plugins: ['react'],
   rules: {
-    "prettier/prettier": [
-      "error",
+    'prettier/prettier': [
+      'error',
       {
-        "printWidth": 100,
-        "singleQuote": true,
-        "tabWidth": 4
+        printWidth: 100,
+        singleQuote: true,
+        tabWidth: 2
       }
     ],
-    "react/prop-types": "warn",
-    "no-extra-semi": "error",
-    // indent: ["error", "tab"],
-    "linebreak-style": ["error", "unix"],
-    quotes: ["error", "single"],
+    'no-console': 'off',
+    'react/prop-types': 'warn',
+    'no-extra-semi': 'error',
+    'linebreak-style': ['error', 'unix'],
     semi: [
-      "error",
-      "always",
+      'error',
+      'always',
       {
         omitLastInOneLineBlock: true
       }

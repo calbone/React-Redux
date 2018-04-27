@@ -78,7 +78,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(true);\n// imports\n\n\n// module\nexports.push([module.i, \"body{margin:0;padding:0;font-family:sans-serif;background:url(\\\"logo.svg\\\")}body ul{background:#f0c}.hoge{color:#ddd}\", \"\", {\"version\":3,\"sources\":[\"/Users/kumamoto-yusuke/Desktop/tech/react/react-ssr/src/index.scss\"],\"names\":[],\"mappings\":\"AAAA,KACE,SAAS,AACT,UAAU,AACV,uBAAuB,AACvB,0BAA2B,CAI5B,AARD,QAMI,eAAmB,CACpB,AAGH,MACE,UAAW,CACZ\",\"file\":\"index.scss\",\"sourcesContent\":[\"body {\\n  margin: 0;\\n  padding: 0;\\n  font-family: sans-serif;\\n  background: url('logo.svg');\\n  ul {\\n    background: #ff00cc;\\n  }\\n}\\n\\n.hoge {\\n  color: #ddd;\\n}\"],\"sourceRoot\":\"\"}]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/index.scss?./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/lib??ref--5-2!./node_modules/sass-loader/lib/loader.js??ref--5-3");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(true);\n// imports\n\n\n// module\nexports.push([module.i, \"body{margin:0;padding:0;font-family:sans-serif;background:url(\\\"logo.svg\\\")}body ul{background:#f0c}.hoge{color:#ddd}\", \"\", {\"version\":3,\"sources\":[\"/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/index.scss\"],\"names\":[],\"mappings\":\"AAAA,KACE,SAAS,AACT,UAAU,AACV,uBAAuB,AACvB,0BAA2B,CAK5B,AATD,QAOI,eAAgB,CACjB,AAGH,MACE,UAAW,CACZ\",\"file\":\"index.scss\",\"sourcesContent\":[\"body {\\n  margin: 0;\\n  padding: 0;\\n  font-family: sans-serif;\\n  background: url('logo.svg');\\n\\n  ul {\\n    background: #f0c;\\n  }\\n}\\n\\n.hoge {\\n  color: #ddd;\\n}\\n\"],\"sourceRoot\":\"\"}]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/index.scss?./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/lib??ref--5-2!./node_modules/sass-loader/lib/loader.js??ref--5-3");
 
 /***/ }),
 
@@ -375,7 +375,7 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Test\", function() { return Test; });\nvar Test = function Test() {\n\treturn React.createElement(\n\t\t\"div\",\n\t\tnull,\n\t\tReact.createElement(\n\t\t\t\"p\",\n\t\t\tnull,\n\t\t\t\"\\u30C6\\u30B9\\u30C8\\u3067\\u30FC\\u3059\"\n\t\t)\n\t);\n};\n\n//# sourceURL=webpack:///./src/components/Test.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Test\", function() { return Test; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar Test = function Test() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    null,\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'p',\n      null,\n      '\\u30C6\\u30B9\\u30C8\\u3067\\u30FC\\u3059'\n    )\n  );\n};\n\n//# sourceURL=webpack:///./src/components/Test.js?");
 
 /***/ }),
 
