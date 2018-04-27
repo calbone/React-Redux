@@ -8,7 +8,8 @@
     "watch": "webpack --mode development --watch",
     "lint:js": "eslint ./src/**/*.js",
     "lint:js-fix": "eslint ./src/**/*.js --fix",
-    "lint:scss": "stylelint ./src/**/*.scss"
+    "lint:scss": "stylelint ./src/**/*.scss",
+    "flow": "flow"
   },
   "devDependencies": {
     "autoprefixer": "^8.3.0",
@@ -19,12 +20,16 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
+    "flow-bin": "^0.71.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.8.3",
     "postcss-loader": "^2.1.4",
+    "prettier": "^1.12.1",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "stylelint": "^9.2.0",
