@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import { TodoApp } from './components/TodoApp';
+// import { TodoApp } from './components/TodoApp';
+import { Test } from './components/Test';
 // import { createStore, applyMiddleware } from 'redux';
 // import { Provider } from 'react-redux';
 // import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -13,7 +14,7 @@ import { TodoApp } from './components/TodoApp';
 // const store = createStore(tasksReducer, applyMiddleware(...middleWares));
 
 ReactDOM.render(
-      <TodoApp />,
+      <Test />,
   document.getElementById('root')
 );
 // ReactDOM.render(

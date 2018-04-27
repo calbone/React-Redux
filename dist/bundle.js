@@ -78,7 +78,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var escape = __webpack_require__(/*! ../node_modules/css-loader/lib/url/escape.js */ \"./node_modules/css-loader/lib/url/escape.js\");\nexports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(true);\n// imports\n\n\n// module\nexports.push([module.i, \"body{margin:0;padding:0;font-family:sans-serif;background:url(\" + escape(__webpack_require__(/*! ./logo.svg */ \"./src/logo.svg\")) + \")}body ul{background:#f0c}.hoge{color:#ddd}\", \"\", {\"version\":3,\"sources\":[\"/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/index.scss\"],\"names\":[],\"mappings\":\"AAAA,KACE,SAAS,AACT,UAAU,AACV,uBAAuB,AACvB,wCAA2B,CAI5B,AARD,QAMI,eAAmB,CACpB,AAGH,MACE,UAAW,CACZ\",\"file\":\"index.scss\",\"sourcesContent\":[\"body {\\n  margin: 0;\\n  padding: 0;\\n  font-family: sans-serif;\\n  background: url('logo.svg');\\n  ul {\\n    background: #ff00cc;\\n  }\\n}\\n\\n.hoge {\\n  color: #ddd;\\n}\"],\"sourceRoot\":\"\"}]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/index.scss?./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/lib??ref--5-2!./node_modules/sass-loader/lib/loader.js??ref--5-3");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(true);\n// imports\n\n\n// module\nexports.push([module.i, \"body{margin:0;padding:0;font-family:sans-serif;background:url(\\\"logo.svg\\\")}body ul{background:#f0c}.hoge{color:#ddd}\", \"\", {\"version\":3,\"sources\":[\"/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/index.scss\"],\"names\":[],\"mappings\":\"AAAA,KACE,SAAS,AACT,UAAU,AACV,uBAAuB,AACvB,0BAA2B,CAI5B,AARD,QAMI,eAAmB,CACpB,AAGH,MACE,UAAW,CACZ\",\"file\":\"index.scss\",\"sourcesContent\":[\"body {\\n  margin: 0;\\n  padding: 0;\\n  font-family: sans-serif;\\n  background: url('logo.svg');\\n  ul {\\n    background: #ff00cc;\\n  }\\n}\\n\\n.hoge {\\n  color: #ddd;\\n}\"],\"sourceRoot\":\"\"}]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/index.scss?./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/lib??ref--5-2!./node_modules/sass-loader/lib/loader.js??ref--5-3");
 
 /***/ }),
 
@@ -90,17 +90,6 @@ eval("var escape = __webpack_require__(/*! ../node_modules/css-loader/lib/url/es
 /***/ (function(module, exports) {
 
 eval("/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAuthor Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\nmodule.exports = function(useSourceMap) {\n\tvar list = [];\n\n\t// return the list of modules as css string\n\tlist.toString = function toString() {\n\t\treturn this.map(function (item) {\n\t\t\tvar content = cssWithMappingToString(item, useSourceMap);\n\t\t\tif(item[2]) {\n\t\t\t\treturn \"@media \" + item[2] + \"{\" + content + \"}\";\n\t\t\t} else {\n\t\t\t\treturn content;\n\t\t\t}\n\t\t}).join(\"\");\n\t};\n\n\t// import a list of modules into the list\n\tlist.i = function(modules, mediaQuery) {\n\t\tif(typeof modules === \"string\")\n\t\t\tmodules = [[null, modules, \"\"]];\n\t\tvar alreadyImportedModules = {};\n\t\tfor(var i = 0; i < this.length; i++) {\n\t\t\tvar id = this[i][0];\n\t\t\tif(typeof id === \"number\")\n\t\t\t\talreadyImportedModules[id] = true;\n\t\t}\n\t\tfor(i = 0; i < modules.length; i++) {\n\t\t\tvar item = modules[i];\n\t\t\t// skip already imported module\n\t\t\t// this implementation is not 100% perfect for weird media query combinations\n\t\t\t//  when a module is imported multiple times with different media queries.\n\t\t\t//  I hope this will never occur (Hey this way we have smaller bundles)\n\t\t\tif(typeof item[0] !== \"number\" || !alreadyImportedModules[item[0]]) {\n\t\t\t\tif(mediaQuery && !item[2]) {\n\t\t\t\t\titem[2] = mediaQuery;\n\t\t\t\t} else if(mediaQuery) {\n\t\t\t\t\titem[2] = \"(\" + item[2] + \") and (\" + mediaQuery + \")\";\n\t\t\t\t}\n\t\t\t\tlist.push(item);\n\t\t\t}\n\t\t}\n\t};\n\treturn list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n\tvar content = item[1] || '';\n\tvar cssMapping = item[3];\n\tif (!cssMapping) {\n\t\treturn content;\n\t}\n\n\tif (useSourceMap && typeof btoa === 'function') {\n\t\tvar sourceMapping = toComment(cssMapping);\n\t\tvar sourceURLs = cssMapping.sources.map(function (source) {\n\t\t\treturn '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'\n\t\t});\n\n\t\treturn [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n\t}\n\n\treturn [content].join('\\n');\n}\n\n// Adapted from convert-source-map (MIT)\nfunction toComment(sourceMap) {\n\t// eslint-disable-next-line no-undef\n\tvar base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n\tvar data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;\n\n\treturn '/*# ' + data + ' */';\n}\n\n\n//# sourceURL=webpack:///./node_modules/css-loader/lib/css-base.js?");
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/lib/url/escape.js":
-/*!***************************************************!*\
-  !*** ./node_modules/css-loader/lib/url/escape.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = function escape(url) {\n    if (typeof url !== 'string') {\n        return url\n    }\n    // If url is already wrapped in quotes, remove them\n    if (/^['\"].*['\"]$/.test(url)) {\n        url = url.slice(1, -1);\n    }\n    // Should url be wrapped?\n    // See https://drafts.csswg.org/css-values-3/#urls\n    if (/[\"'() \\t\\n]/.test(url)) {\n        return '\"' + url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n') + '\"'\n    }\n\n    return url\n}\n\n\n//# sourceURL=webpack:///./node_modules/css-loader/lib/url/escape.js?");
 
 /***/ }),
 
@@ -378,15 +367,15 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 
 /***/ }),
 
-/***/ "./src/components/TodoApp.js":
-/*!***********************************!*\
-  !*** ./src/components/TodoApp.js ***!
-  \***********************************/
-/*! exports provided: TodoApp */
+/***/ "./src/components/Test.js":
+/*!********************************!*\
+  !*** ./src/components/Test.js ***!
+  \********************************/
+/*! exports provided: Test */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"TodoApp\", function() { return TodoApp; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction TodoApp(_ref) {\n  var task = _ref.task,\n      tasks = _ref.tasks,\n      inputTask = _ref.inputTask,\n      addTask = _ref.addTask;\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    \"div\",\n    null,\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", { type: \"text\", onChange: function onChange(e) {\n        return inputTask(e.target.value);\n      } }),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", { type: \"button\", value: \"add\", onClick: function onClick() {\n        return addTask(task);\n      } }),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      \"p\",\n      { className: \"hoge\" },\n      \"\\u30C6\\u30AD\\u30B9\\u30C8\"\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"ul\", null)\n  );\n}\n\n//# sourceURL=webpack:///./src/components/TodoApp.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Test\", function() { return Test; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar Test = function Test() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    null,\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'p',\n      null,\n      '\\u30C6\\u30B9\\u30C8\\u3067\\u30FC\\u3059'\n    )\n  );\n};\n\n//# sourceURL=webpack:///./src/components/Test.js?");
 
 /***/ }),
 
@@ -398,7 +387,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _components_TodoApp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/TodoApp */ \"./src/components/TodoApp.js\");\n\n\n\n\n// import { createStore, applyMiddleware } from 'redux';\n// import { Provider } from 'react-redux';\n// import { BrowserRouter as Router, Route } from 'react-router-dom';\n// import logger from 'redux-logger';\n// import thunk from 'redux-thunk';\n// import { tasksReducer } from './reducers/tasksReducer';\n\n// const middleWares = [logger, thunk]\n// const store = createStore(tasksReducer, applyMiddleware(...middleWares));\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TodoApp__WEBPACK_IMPORTED_MODULE_3__[\"TodoApp\"], null), document.getElementById('root'));\n// ReactDOM.render(\n//   <Provider store={store}>\n//     <Router>\n//       <TodoApp />\n//     </Router>\n//   </Provider>, \n//   document.getElementById('root')\n// );\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _components_Test__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Test */ \"./src/components/Test.js\");\n\n\n\n// import { TodoApp } from './components/TodoApp';\n\n// import { createStore, applyMiddleware } from 'redux';\n// import { Provider } from 'react-redux';\n// import { BrowserRouter as Router, Route } from 'react-router-dom';\n// import logger from 'redux-logger';\n// import thunk from 'redux-thunk';\n// import { tasksReducer } from './reducers/tasksReducer';\n\n// const middleWares = [logger, thunk]\n// const store = createStore(tasksReducer, applyMiddleware(...middleWares));\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Test__WEBPACK_IMPORTED_MODULE_3__[\"Test\"], null), document.getElementById('root'));\n// ReactDOM.render(\n//   <Provider store={store}>\n//     <Router>\n//       <TodoApp />\n//     </Router>\n//   </Provider>, \n//   document.getElementById('root')\n// );\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -410,17 +399,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("\nvar content = __webpack_require__(/*! !../node_modules/css-loader??ref--5-1!../node_modules/postcss-loader/lib??ref--5-2!../node_modules/sass-loader/lib/loader.js??ref--5-3!./index.scss */ \"./node_modules/css-loader/index.js??ref--5-1!./node_modules/postcss-loader/lib/index.js??ref--5-2!./node_modules/sass-loader/lib/loader.js??ref--5-3!./src/index.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/index.scss?");
-
-/***/ }),
-
-/***/ "./src/logo.svg":
-/*!**********************!*\
-  !*** ./src/logo.svg ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"./images/logo.svg\";\n\n//# sourceURL=webpack:///./src/logo.svg?");
 
 /***/ })
 

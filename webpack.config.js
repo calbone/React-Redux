@@ -3,7 +3,6 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MODE = 'development';
 const enabledSourceMap = (MODE === 'development');
-
 module.exports = {
   mode: MODE,
 
@@ -31,7 +30,7 @@ module.exports = {
               loader: 'css-loader',
               options: {
                 // CSS内のurl()メソッドの取り込みを禁止する
-                url: true,
+                url: false,
                 // CSSの空白文字を削除する
                 minimize: true,
                 // ソースマップを有効にする
@@ -69,7 +68,11 @@ module.exports = {
         // 画像を埋め込まず任意のフォルダに保存する
         loader: 'file-loader',
         options: {
-          name: './images/[name].[ext]'
+          name: '[name].[ext]',
+          outputPath : 'images/',
+          publicPath : function(path){
+              return '../' + path;
+          }
         }
       }
     ]
