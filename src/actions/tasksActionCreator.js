@@ -1,5 +1,5 @@
-const INPUTTASK = "INPUT_TASK";
-const ADDTASK = "ADD_TASK";
+const INPUTTASK = 'INPUT_TASK';
+const ADDTASK = 'ADD_TASK';
 
 export const inputTask = (task) =>({
 	type: INPUTTASK,
@@ -13,8 +13,4 @@ export const addTask = (task) => ({
 	payload: {
 		task
 	}
-});
-
-export const resetTask = (task) => ({
-	type: "RESET_TASK"
 });

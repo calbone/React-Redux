@@ -1,10 +1,12 @@
 module.exports = {
     "env": {
         "browser": true,
-        "commonjs": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
@@ -17,6 +19,7 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "react/prop-types": "warn",
         "no-extra-semi": "error",
         "indent": [
             "error",
@@ -28,11 +31,14 @@ module.exports = {
         ],
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "semi": [
             "error",
-            "always"
+            "always",
+            {
+                "omitLastInOneLineBlock": true
+            }
         ]
     }
 };
