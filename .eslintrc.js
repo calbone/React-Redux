@@ -4,6 +4,7 @@ module.exports = {
     node: true,
     es6: true
   },
+
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -18,12 +19,12 @@ module.exports = {
     sourceType: 'module',
     ecmaVersion: 2017
   },
-  plugins: ['react'],
+  plugins: ['react', 'prettier'],
   rules: {
     'prettier/prettier': [
       'error',
       {
-        printWidth: 100,
+        printWidth: 80,
         singleQuote: true,
         tabWidth: 2
       }

@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MODE = 'development';
@@ -6,9 +7,14 @@ const enabledSourceMap = MODE === 'development';
 
 module.exports = {
   mode: MODE,
-  entry: './src/index.js',
+  entry: [
+    'babel-polyfill',
+    'react-hot-loader/patch',
+    './src/index.js'
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: 'dist',
     filename: 'bundle.js'
   },
   module: {
@@ -17,7 +23,10 @@ module.exports = {
         test: /\.js$/,
         use: [
           {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            options: {
+              plugins:['react-hot-loader/babel']
+            }
           }
         ],
         exclude: /node_modules/
@@ -67,18 +76,19 @@ module.exports = {
         test: /\.(gif|png|jpg|eot|wof|woff|ttf|svg)$/,
         // 画像を埋め込まず任意のフォルダに保存する
         loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'images/',
-          publicPath: function(path) {
-            return '../' + path;
-          }
-        }
-      }
+      },
     ]
   },
+  devServer: {
+    contentBase: path.join(__dirname, '/'),
+    port: 8080,
+    hot: true,
+    open: true,
+  },
   plugins: [
-    new ExtractTextPlugin('style.css')
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('style.css'),
     // new HtmlWebpackPlugin({template: './public/index.html'})
   ]
 };
