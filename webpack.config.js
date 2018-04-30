@@ -1,21 +1,17 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const MODE = 'development';
-const enabledSourceMap = MODE === 'development';
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MODE = "development";
+const enabledSourceMap = MODE === "development";
 
 module.exports = {
   mode: MODE,
-  entry: [
-    'babel-polyfill',
-    'react-hot-loader/patch',
-    './src/index.js'
-  ],
+  entry: ["babel-polyfill", "react-hot-loader/patch", "./src/index.js"],
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: 'dist',
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "dist",
+    filename: "bundle.js"
   },
   module: {
     rules: [
@@ -23,9 +19,9 @@ module.exports = {
         test: /\.js$/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
-              plugins:['react-hot-loader/babel']
+              plugins: ["react-hot-loader/babel"]
             }
           }
         ],
@@ -34,9 +30,9 @@ module.exports = {
       {
         test: /\.scss/,
         use: [
-          'style-loader',
+          "style-loader",
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               // CSS内のurl()メソッドの取り込みを禁止する
               url: false,
@@ -51,19 +47,19 @@ module.exports = {
             }
           },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               // PostCSS側でもソースマップを有効にする
               sourceMap: true,
               plugins: [
                 // Autoprefixerを有効化
                 // ベンダープレフィックスを自動付与する
-                require('autoprefixer')({ grid: true })
+                require("autoprefixer")({ grid: true })
               ]
             }
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
               // ソースマップの利用有無
               sourceMap: enabledSourceMap
@@ -75,20 +71,19 @@ module.exports = {
         // 対象となるファイルの拡張子
         test: /\.(gif|png|jpg|eot|wof|woff|ttf|svg)$/,
         // 画像を埋め込まず任意のフォルダに保存する
-        loader: 'file-loader',
-      },
+        loader: "file-loader"
+      }
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, '/'),
-    port: 8080,
+    contentBase: path.join(__dirname, "/"),
     hot: true,
-    open: true,
+    open: true
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin("style.css")
     // new HtmlWebpackPlugin({template: './public/index.html'})
   ]
 };
