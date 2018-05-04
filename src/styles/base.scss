@@ -1,0 +1,37 @@
+@import "reset";
+@import "variations";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-width: 1024px;
+  font-family: 'HiraKakuProN-W3','verdana';
+  font-size: $fs_default;
+  color: $color_black;
+}
+
+a {
+  color: $color_light-blue;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+input,
+textarea,
+select {
+  appearance: none;
+  font-size: $fs_large;
+}
+
+input, select {
+  line-height: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}

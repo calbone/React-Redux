@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
+import './styles/base.scss';
 import TodoApp from './contaniers/TodoApp';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
