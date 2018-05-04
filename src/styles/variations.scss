@@ -1,0 +1,57 @@
+
+// font size
+$fs_default: 1.4rem;
+$fs_extra-large: 1.8rem;
+$fs_large: 1.6rem;
+$fs_small: 1.3rem;
+$fs_extra-small: 1.2rem;
+$fs_extra-extra-small: 1.1rem;
+
+// color
+$color_light-blue: #62D4E3;
+$color_dark-blue: #0498AB;
+$color_default: #00BCD4;
+$color_success: #13CE66;
+$color_warning: #F7BA2A;
+$color_danger: #FF5A6E;
+$color_black: #333;
+$color_light-black: #474747;
+$color_extra-light-black: #666;
+$color_sliver: #888;
+$color_light-silver: #A4A4A4;
+$color_extra-light-silver: #C1C1C1;
+$color_gray: #DADADA;
+$color_light-gray: #E4E4E4;
+$color_extra-light-gray: #F0F0F0;
+$color_dark-white: #F7F7F7;
+$color_white: #FFF;
+$overlay_black: rgba(51, 51, 51, 0.7);
+
+// border
+$border_normal: solid 1px $color_extra-light-silver;
+$border_weak: solid 1px $color_extra-light-gray;
+$border_focus: solid 1px $color_default;
+$border_error: solid 1px $color_danger;
+
+// heading
+@mixin heading1_font {
+    font-size: $fs_extra-large;
+}
+@mixin heading1_em-font {
+    font-size: $fs_extra-large;
+    font-weight: bold;
+}
+@mixin heading2_font {
+    font-size: $fs_extra-large;
+}
+@mixin heading2_em-font {
+    font-size: $fs_extra-large;
+    font-weight: bold;
+}
+@mixin heading3_font {
+    font-size: $fs_large;
+}
+@mixin heading3_em-font {
+    font-size: $fs_large;
+    font-weight: bold;
+}
