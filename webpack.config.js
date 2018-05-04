@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MODE = 'development';
 const enabledSourceMap = MODE === 'development';
@@ -10,7 +10,7 @@ module.exports = {
   entry: ['babel-polyfill', 'react-hot-loader', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'dist',
+    publicPath: '/',
     filename: 'bundle.js'
   },
   module: {
@@ -76,14 +76,14 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, '/'),
+    contentBase: path.join(__dirname, 'dist'),
     hot: true,
     open: true
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('style.css')
-    // new HtmlWebpackPlugin({template: './public/index.html'})
+    new ExtractTextPlugin('style.css'),
+    new HtmlWebpackPlugin({template: './public/index.html'})
   ]
 };
