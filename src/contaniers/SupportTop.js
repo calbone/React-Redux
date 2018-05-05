@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { SupportTop } from '@/components/pages/SupportTop';
+import SupportTop from '@/components/pages/SupportTop';
 import { inputTask, addTask } from '@/actions/tasksActionCreator';
 
 function mapStateToProps({ task, tasks }) {
