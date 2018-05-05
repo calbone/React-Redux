@@ -7,7 +7,7 @@ const enabledSourceMap = MODE === 'development';
 
 module.exports = {
   mode: MODE,
-  entry: ['babel-polyfill', 'react-hot-loader', './src/index.js'],
+  entry: ['./src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
