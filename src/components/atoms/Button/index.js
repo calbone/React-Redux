@@ -1,7 +1,8 @@
 import React from 'react';
+import './style.scss';
 
 export const PrimaryButton = () => {
   return (
-    <a href="#">ほげほげ</a>
+    <a className="btnBase">ふがふが</a>
   );
 };

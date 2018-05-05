@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { TodoApp } from '../components/TodoApp';
-import { inputTask, addTask } from '../actions/tasksActionCreator';
+import { SupportTop } from '@/components/pages/SupportTop';
+import { inputTask, addTask } from '@/actions/tasksActionCreator';
 
 function mapStateToProps({ task, tasks }) {
   return {
@@ -20,4 +20,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);
+export default connect(mapStateToProps, mapDispatchToProps)(SupportTop);

@@ -13,6 +13,11 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  },
   module: {
     rules: [
       {
@@ -84,6 +89,6 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('style.css'),
-    new HtmlWebpackPlugin({template: './public/index.html'})
+    new HtmlWebpackPlugin({ template: './public/index.html' })
   ]
 };
