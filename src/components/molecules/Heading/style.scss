@@ -8,4 +8,14 @@
   background-color: #f7f7f7;
   height: 140px;
   margin-bottom: 28px;
+  box-sizing: border-box;
+  &Description {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    color: #1f2d3d;
+    font-size: 26px;
+  }
 }

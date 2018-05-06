@@ -15,7 +15,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src'),
     }
   },
   module: {
@@ -39,6 +39,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              modules: true,
               // CSS内のurl()メソッドの取り込みを禁止する
               url: false,
               // CSSの空白文字を削除する

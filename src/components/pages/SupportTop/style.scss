@@ -1,4 +1,77 @@
+.pageDescription {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .buttonWrap {
   width: 450px;
   margin: 0 auto;
 }
+
+.serviceListWrap {
+  width: 800px;
+  margin: auto;
+}
+
+.serviceList {
+  border: 10px solid #f6f6f6;
+  margin-top: 20px;
+}
+
+.accordionWarp {
+  border-bottom: solid 1px #F0F0F0;
+  background-color: #fff;
+  font-size: 16px;
+}
+.accordionTitleWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 10px 17px;
+  .accordionTitle {
+    margin-left: 10px;
+    margin-right: 18px;
+  }
+  .accordionArrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto;
+    filter: brightness(0) invert(0.4);
+    transform: rotate(90deg);
+  }
+}
+.accordionDescription {
+  padding: 17px 19px;
+  line-height: 1.5;
+  .accordionList {
+    color: #333;
+    margin-bottom: 15px;
+    list-style: disc;
+    margin-left: 56px;
+    a {
+      color: #333;
+    }
+  }
+}
+.show {
+  .accordionArrow {
+    transition: transform 100ms;
+    transform: rotate(-90deg);
+  }
+  .accordionDescription {
+    display: block;
+  }
+}
+.hidden {
+  .accordionArrow {
+    transition: transform 100ms;
+    transform: rotate(90deg);
+  }
+  .accordionDescription {
+    display: none;
+  }
+}
+
+

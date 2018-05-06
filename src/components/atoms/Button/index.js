@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Button = styled.a`
+const PrimaryButton = styled.a`
   display: block;
   border-radius: 44px;
   font-size: 16px;
@@ -19,6 +18,4 @@ const Button = styled.a`
   }
 `;
 
-export const PrimaryButton = () => {
-  return <Button>履歴一覧</Button>;
-};
+export default PrimaryButton;
