@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import SupportTop from '@/components/pages/SupportTop';
 import { fetchService } from '@/actions/tasksActionCreator';
 
-function mapStateToProps({ services }) {
+function mapStateToProps({ serviceList }) {
   return {
-    services
+    serviceList
   };
 }
 
@@ -24,7 +24,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     }
     render() {
       return (
-        <SupportTop serviceList={this.props.services} />
+        <SupportTop {...this.props} />
       );
     }
   }

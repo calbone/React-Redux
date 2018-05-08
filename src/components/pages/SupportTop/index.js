@@ -4,6 +4,7 @@ import PrimaryButton from '@/components/atoms/Button';
 import H1Heading from '@/components/molecules/Heading';
 
 export default (props) => {
+  const { serviceList } = props;
   return (
     <div>
       <H1Heading>サポートセンター</H1Heading>
@@ -15,7 +16,7 @@ export default (props) => {
       </div>
       <div className={styles.serviceListWrap}>
         <ul className={styles.serviceList}>
-          {props.serviceList.map((item, i) => {
+          {serviceList.map((item, i) => {
             return (
               <li key={i}>
                 <div className={styles.accordionWarp}>
