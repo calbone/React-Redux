@@ -1,23 +1,31 @@
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SupportTop from '@/components/pages/SupportTop';
-import { inputTask, addTask } from '@/actions/tasksActionCreator';
+import { fetchService } from '@/actions/tasksActionCreator';
 
-function mapStateToProps({ task, tasks }) {
+function mapStateToProps({ services }) {
   return {
-    task,
-    tasks
+    services
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    addTask(task) {
-      dispatch(addTask(task));
-    },
-    inputTask(task) {
-      dispatch(inputTask(task));
+    fetchService() {
+      dispatch(fetchService());
     }
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SupportTop);
+export default connect(mapStateToProps, mapDispatchToProps)(
+  class SupportTopContainer extends Component {
+    componentDidMount() {
+      this.props.fetchService();
+    }
+    render() {
+      return (
+        <SupportTop serviceList={this.props.services} />
+      );
+    }
+  }
+);
