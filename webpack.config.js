@@ -16,8 +16,10 @@ module.exports = {
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
+      public: path.resolve(__dirname, 'public')
     }
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -34,44 +36,46 @@ module.exports = {
       },
       {
         test: /\.scss/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              // CSS内のurl()メソッドの取り込みを禁止する
-              url: false,
-              // CSSの空白文字を削除する
-              minimize: true,
-              // ソースマップを有効にする
-              sourceMap: enabledSourceMap,
-              // 0 => no loaders (default);
-              // 1 => postcss-loader;
-              // 2 => postcss-loader, sass-loader
-              importLoaders: 2
+        use: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                // CSS内のurl()メソッドの取り込みを禁止する
+                url: false,
+                // CSSの空白文字を削除する
+                minimize: true,
+                // ソースマップを有効にする
+                sourceMap: enabledSourceMap,
+                // 0 => no loaders (default);
+                // 1 => postcss-loader;
+                // 2 => postcss-loader, sass-loader
+                importLoaders: 2
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                // PostCSS側でもソースマップを有効にする
+                sourceMap: enabledSourceMap,
+                plugins: [
+                  // Autoprefixerを有効化
+                  // ベンダープレフィックスを自動付与する
+                  require('autoprefixer')({ grid: true })
+                ]
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                // ソースマップの利用有無
+                sourceMap: enabledSourceMap
+              }
             }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              // PostCSS側でもソースマップを有効にする
-              sourceMap: true,
-              plugins: [
-                // Autoprefixerを有効化
-                // ベンダープレフィックスを自動付与する
-                require('autoprefixer')({ grid: true })
-              ]
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              // ソースマップの利用有無
-              sourceMap: enabledSourceMap
-            }
-          }
-        ]
+          ],
+          fallback: 'style-loader'
+        })
       },
       {
         // 対象となるファイルの拡張子
@@ -84,7 +88,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     hot: true,
-    open: true
+    open: true,
   },
   plugins: [
     new webpack.NamedModulesPlugin(),

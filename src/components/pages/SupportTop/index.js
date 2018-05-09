@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './style.scss';
 import PrimaryButton from '@/components/atoms/Button';
 import H1Heading from '@/components/molecules/Heading';
+import ServiceIcon from '@/components/atoms/icons/ServiceIcon';
 
 export default (props) => {
   const { serviceList } = props;
@@ -21,6 +22,7 @@ export default (props) => {
               <li key={i}>
                 <div className={styles.accordionWarp}>
                   <div id={item.serviceId} className={styles.accordionTitleWrap}>
+                    <ServiceIcon serviceName={item.data.serviceIcon} />
                     <span className={styles.accordionTitle}>{item.data.linkDescription}</span>
                   </div>
                 </div>

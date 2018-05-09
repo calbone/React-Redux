@@ -4,7 +4,10 @@ import SupportTop from '@/components/pages/SupportTop';
 import { fetchService } from '@/actions/tasksActionCreator';
 
 export default connect (
-  state => ({ serviceList: state.serviceList }), { fetchService })
+  state => (
+    { serviceList: state.serviceList }),
+    { fetchService }
+  )
   (class SupportTopContainer extends Component {
     componentDidMount() {
       this.props.fetchService();
