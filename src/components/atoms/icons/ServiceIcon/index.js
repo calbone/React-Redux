@@ -1,4 +1,5 @@
 import React from 'react';
+import iconPath from './iconPath';
 
 export default (props) => {
   const {
@@ -7,6 +8,6 @@ export default (props) => {
     height,
     className
   } = props;
-  const path = `public/icons/${serviceName}.svg`;
+  const path = iconPath[serviceName];
   return <img src={ path } className={ className } width={ width || 22 } height={ height || 22 } />;
 };

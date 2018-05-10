@@ -81,14 +81,18 @@ module.exports = {
         // 対象となるファイルの拡張子
         test: /\.(gif|png|jpg|eot|wof|woff|ttf|svg)$/,
         // 画像を埋め込まず任意のフォルダに保存する
-        loader: 'file-loader'
+        loader: 'file-loader',
+        options: {
+          name: '[path][name][hash].[ext]',
+          publicPath: '/'
+        }
       }
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'public'),
     hot: true,
-    open: true,
+    open: true
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
