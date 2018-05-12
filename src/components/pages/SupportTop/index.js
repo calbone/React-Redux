@@ -3,14 +3,12 @@ import Styles from './style.scss';
 import PrimaryButton from '@/components/atoms/Button';
 import H1Heading from '@/components/molecules/Heading';
 import ServiceIcon from '@/components/atoms/icons/ServiceIcon';
-import Logo from 'public/images/logo.svg';
 
 export default (props) => {
   const { serviceList } = props;
   return (
     <div>
       <H1Heading>サポートセンター</H1Heading>
-      <img src={Logo} alt="react" />
       <p className={Styles.pageDescription}>
         お問い合わせ内容とサポートセンターからの返信が確認できます。
       </p>
