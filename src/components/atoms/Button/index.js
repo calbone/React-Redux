@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const PrimaryButton = styled.a`
+const PrimaryButton = styled(Link)`
   display: block;
   border-radius: 44px;
   font-size: 16px;

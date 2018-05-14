@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import SupportTop from '@/contaniers/SupportTop';
-import SupportTop from '@/contaniers/History';
+import App from './App';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -16,7 +15,7 @@ const store = createStore(rootReducer, applyMiddleware(...middleWares));
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <SupportTop />
+      <App />
     </Router>
   </Provider>,
   document.getElementById('root')

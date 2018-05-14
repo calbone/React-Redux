@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import History from '@/components/pages/History';
 import { fetchHistory } from '@/actions/history';
 
-export default connect (
+export default connect(
   state => (
     { historyList: state.history.historyList }
   ), {fetchHistory}
