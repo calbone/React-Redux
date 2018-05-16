@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import service from './service';
-import history from './history';
+import history from './supportHistory';
 
 export const rootReducer = combineReducers({
   service,
