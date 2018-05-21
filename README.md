@@ -34,6 +34,14 @@ Add additional notes about how to deploy this on a live system
 
 * webpack 4.× - The building tool used
 
+## Routing With
+
+* react-router-dom 4.2.2 - Used to routing setting
+
+## Store With
+
+* redux 4.0.0 - Used to state management
+
 
 ## License
 
