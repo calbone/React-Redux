@@ -23,7 +23,7 @@ Explain how to run the automated tests for this system
 Jest + enzyme (to be introduced)
 
 ```
-Give an example
+yarn test:unit
 ```
 
 ## Deployment
