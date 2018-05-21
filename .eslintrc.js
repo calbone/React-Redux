@@ -6,36 +6,37 @@ module.exports = {
   },
 
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:prettier/recommended'
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
   ],
-  parser: 'babel-eslint',
+  parser: "babel-eslint",
   parserOptions: {
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
       jsx: true
     },
-    sourceType: 'module',
+    sourceType: "module",
     ecmaVersion: 2017
   },
-  plugins: ['react', 'prettier'],
+  plugins: ["react", "prettier"],
   rules: {
-    'prettier/prettier': [
-      'error',
+    "react/display-name": 0,
+    "prettier/prettier": [
+      "error",
       {
         printWidth: 80,
         singleQuote: true,
-        tabWidth: 2
+        tabWidth: 2,
       }
     ],
-    'no-console': 'off',
-    'react/prop-types': 'warn',
-    'no-extra-semi': 'error',
-    'linebreak-style': ['error', 'unix'],
+    "no-console": "off",
+    "react/prop-types": "warn",
+    "no-extra-semi": "error",
+    "linebreak-style": ["error", "unix"],
     semi: [
-      'error',
-      'always',
+      "error",
+      "always",
       {
         omitLastInOneLineBlock: true
       }

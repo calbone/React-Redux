@@ -4,7 +4,7 @@ import PrimaryButton from '@/components/atoms/Button';
 import H1Heading from '@/components/molecules/Heading';
 import ServiceIcon from '@/components/atoms/icons/ServiceIcon';
 
-export default (props) => {
+export default props => {
   const { serviceList } = props;
   return (
     <div>
@@ -15,15 +15,21 @@ export default (props) => {
       <div className={Styles.buttonWrap}>
         <PrimaryButton to="/log">履歴一覧</PrimaryButton>
       </div>
+
       <div className={Styles.serviceListWrap}>
         <ul className={Styles.serviceList}>
           {serviceList.map((item, i) => {
             return (
               <li key={i}>
                 <div className={Styles.accordionWarp}>
-                  <div id={item.serviceId} className={Styles.accordionTitleWrap}>
+                  <div
+                    id={item.serviceId}
+                    className={Styles.accordionTitleWrap}
+                  >
                     <ServiceIcon serviceName={item.data.serviceIcon} />
-                    <span className={Styles.accordionTitle}>{item.data.linkDescription}</span>
+                    <span className={Styles.accordionTitle}>
+                      {item.data.linkDescription}
+                    </span>
                   </div>
                 </div>
               </li>
