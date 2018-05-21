@@ -1,0 +1,154 @@
+@import '../../../styles/variations.scss';
+
+.wrap {
+    padding: 0 10px 60px;
+}
+
+.historyListWrap {
+    width: 800px;
+    margin: auto;
+    + .pagenationSection {
+        margin-top: 30px;
+    }
+}
+.pagenationSection {
+    + .cautionMessage {
+        margin-top: 30px;
+    }
+}
+.cautionMessage {
+    text-align: center;
+    font-size: $fs_extra-small;
+    color: $color_light-silver;
+}
+.historyList {
+    border: 10px solid #f6f6f6;
+    > li + li {
+        margin-top: 1px;
+    }
+}
+.historyItem {
+    position: relative;
+    display: block;
+    padding: 20px 30px 20px 15px;
+    background-color: $color_white;
+    border-bottom: 2px solid #f6f6f6;
+    &:hover {
+        text-decoration: none;
+    }
+    .statusWrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .statusContent {
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .content {
+        display: block;
+        line-height: 1.5;
+        color: $color_black;
+        font-size: $fs_large;
+    }
+    .linkedIcon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 10px;
+        margin: auto;
+        filter: brightness(0) invert(0.4);
+    }
+}
+.update {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: $fs_extra-small;
+    color: #1f2d3d;
+}
+.data + .time {
+    margin-left: .5em;
+}
+.waiting {
+    .status:before {
+        box-sizing: border-box;
+        content: '返信待ち';
+        display: inline-block;
+        padding: 2px 5px;
+        font-size: $fs_extra-small;
+        color: $color_default;
+        border: 1px solid $color_default;
+        border-radius: 2px;
+        margin-right: 20px;
+    }
+}
+.responding {
+    .status:before {
+        box-sizing: border-box;
+        content: '返信あり';
+        display: inline-block;
+        padding: 2px 5px;
+        font-size: $fs_extra-small;
+        color: $color_white;
+        border: 1px solid $color_danger;
+        background-color: $color_danger;
+        border-radius: 2px;
+        margin-right: 20px;
+    }
+    .content {
+        font-weight: bold;
+        color: #1f2d3d;
+    }
+}
+.notAsking {
+    .status:before {
+        box-sizing: border-box;
+        content: '返信不要';
+        display: inline-block;
+        padding: 2px 5px;
+        font-size: $fs_extra-small;
+        color: $color_light-silver;
+        border: 1px solid $color_light-silver;
+        border-radius: 2px;
+        margin-right: 20px;
+    }
+}
+.done {
+    .status:before {
+        box-sizing: border-box;
+        content: '解決済み';
+        display: inline-block;
+        padding: 2px 5px;
+        font-size: $fs_extra-small;
+        color: $color_light-silver;
+        border: 1px solid $color_light-silver;
+        border-radius: 2px;
+        margin-right: 20px;
+    }
+    .content {
+        color: $color_light-silver;
+    }
+}
+.checked {
+    .status:before {
+        box-sizing: border-box;
+        content: '確認済み';
+        display: inline-block;
+        padding: 2px 4px;
+        font-size: $fs_extra-small;
+        color: $color_extra-light-silver;
+        border: 1px solid $color_extra-light-silver;
+        border-radius: 2px;
+        margin-right: 20px;
+    }
+}
+.helpWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    margin: 20px auto 0;
+}
