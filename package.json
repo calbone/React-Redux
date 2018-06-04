@@ -10,7 +10,8 @@
     "lint:js": "eslint ./src/**/*.js",
     "lint:js-fix": "eslint ./src/**/*.js --fix",
     "lint:scss": "stylelint ./src/**/*.scss",
-    "flow": "flow"
+    "flow": "flow",
+    "test:unit": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
