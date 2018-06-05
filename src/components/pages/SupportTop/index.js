@@ -23,7 +23,7 @@ export default props => {
               <li key={i}>
                 <div className={Styles.accordionWarp}>
                   <div
-                    id={item.serviceId}
+                    id={ite.serviceId}
                     className={Styles.accordionTitleWrap}
                   >
                     <ServiceIcon serviceName={item.data.serviceIcon} />
