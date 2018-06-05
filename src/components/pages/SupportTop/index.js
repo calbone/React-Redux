@@ -13,7 +13,7 @@ export default props => {
         お問い合わせ内容とサポートセンターからの返信が確認できます。
       </p>
       <div className={Styles.buttonWrap}>
-        <PrimaryButton to="/log">履歴覧</PrimaryButton>
+        <PrimaryButton to="/log">履歴一覧</PrimaryButton>
       </div>
 
       <div className={Styles.serviceListWrap}>
