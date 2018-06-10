@@ -109,7 +109,7 @@
 /******/ 	}
 /******/
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6972b207a21c5e86e138"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f89d690920d48a287c62"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -829,7 +829,7 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push([0,"vendors~main"]);
+/******/ 	deferredModules.push([0,"vendor"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
@@ -925,7 +925,7 @@ function (_Component) {
     return;
   }
 
-  reactHotLoader.register(App, "App", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/App.js");
+  reactHotLoader.register(App, "App", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/App.js");
   leaveModule(module);
 })();
 
@@ -1242,8 +1242,8 @@ var fetchHistory = function fetchHistory() {
     return;
   }
 
-  reactHotLoader.register(FETCH_HISTORY, "FETCH_HISTORY", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/actions/supportHistory.js");
-  reactHotLoader.register(fetchHistory, "fetchHistory", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/actions/supportHistory.js");
+  reactHotLoader.register(FETCH_HISTORY, "FETCH_HISTORY", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/actions/supportHistory.js");
+  reactHotLoader.register(fetchHistory, "fetchHistory", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/actions/supportHistory.js");
   leaveModule(module);
 })();
 
@@ -1321,8 +1321,8 @@ var fetchService = function fetchService() {
     return;
   }
 
-  reactHotLoader.register(FETCH_SERVICE, "FETCH_SERVICE", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/actions/tasksActionCreator.js");
-  reactHotLoader.register(fetchService, "fetchService", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/actions/tasksActionCreator.js");
+  reactHotLoader.register(FETCH_SERVICE, "FETCH_SERVICE", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/actions/tasksActionCreator.js");
+  reactHotLoader.register(fetchService, "fetchService", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/actions/tasksActionCreator.js");
   leaveModule(module);
 })();
 
@@ -1368,8 +1368,8 @@ var _default = PrimaryButton;
     return;
   }
 
-  reactHotLoader.register(PrimaryButton, "PrimaryButton", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/components/atoms/Button/index.js");
-  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/components/atoms/Button/index.js");
+  reactHotLoader.register(PrimaryButton, "PrimaryButton", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/components/atoms/Button/index.js");
+  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/components/atoms/Button/index.js");
   leaveModule(module);
 })();
 
@@ -1437,7 +1437,7 @@ var _default = function _default(props) {
     return;
   }
 
-  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/components/atoms/icons/ServiceIcon/index.js");
+  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/components/atoms/icons/ServiceIcon/index.js");
   leaveModule(module);
 })();
 
@@ -1489,7 +1489,7 @@ var _default = function _default(props) {
     return;
   }
 
-  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/components/molecules/Heading/index.js");
+  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/components/molecules/Heading/index.js");
   leaveModule(module);
 })();
 
@@ -1577,7 +1577,7 @@ var _default = function _default(props) {
     return;
   }
 
-  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/components/pages/SupportHistory/index.js");
+  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/components/pages/SupportHistory/index.js");
   leaveModule(module);
 })();
 
@@ -1666,7 +1666,7 @@ var _default = function _default(props) {
     return;
   }
 
-  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/components/pages/SupportTop/index.js");
+  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/components/pages/SupportTop/index.js");
   leaveModule(module);
 })();
 
@@ -1779,7 +1779,7 @@ function (_Component) {
     return;
   }
 
-  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/contaniers/SupportHistory.js");
+  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/contaniers/SupportHistory.js");
   leaveModule(module);
 })();
 
@@ -1880,7 +1880,7 @@ function (_Component) {
     return;
   }
 
-  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/contaniers/SupportTop.js");
+  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/contaniers/SupportTop.js");
   leaveModule(module);
 })();
 
@@ -1910,9 +1910,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(redux_logger__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/lib/index.js");
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(redux_thunk__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/styles/index.scss */ "./src/styles/index.scss");
-/* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styles_index_scss__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/reducers */ "./src/reducers/index.js");
+/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/reducers */ "./src/reducers/index.js");
 (function () {
   var enterModule = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").enterModule;
 
@@ -1926,11 +1924,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ // import '@/styles/index.scss';
 
 
 var middleWares = [redux_logger__WEBPACK_IMPORTED_MODULE_6___default.a, redux_thunk__WEBPACK_IMPORTED_MODULE_7___default.a];
-var store = Object(redux__WEBPACK_IMPORTED_MODULE_3__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_9__["rootReducer"], redux__WEBPACK_IMPORTED_MODULE_3__["applyMiddleware"].apply(void 0, middleWares));
+var store = Object(redux__WEBPACK_IMPORTED_MODULE_3__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_8__["rootReducer"], redux__WEBPACK_IMPORTED_MODULE_3__["applyMiddleware"].apply(void 0, middleWares));
 react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_4__["Provider"], {
   store: store
 }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_2__["default"], null))), document.getElementById('root'));
@@ -1945,8 +1943,8 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
     return;
   }
 
-  reactHotLoader.register(middleWares, "middleWares", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/index.js");
-  reactHotLoader.register(store, "store", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/index.js");
+  reactHotLoader.register(middleWares, "middleWares", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/index.js");
+  reactHotLoader.register(store, "store", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/index.js");
   leaveModule(module);
 })();
 
@@ -1992,7 +1990,7 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
     return;
   }
 
-  reactHotLoader.register(rootReducer, "rootReducer", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/reducers/index.js");
+  reactHotLoader.register(rootReducer, "rootReducer", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/reducers/index.js");
   leaveModule(module);
 })();
 
@@ -2051,8 +2049,8 @@ var _default = function _default() {
     return;
   }
 
-  reactHotLoader.register(initState, "initState", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/reducers/supportHistory.js");
-  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/reducers/supportHistory.js");
+  reactHotLoader.register(initState, "initState", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/reducers/supportHistory.js");
+  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/reducers/supportHistory.js");
   leaveModule(module);
 })();
 
@@ -2111,24 +2109,13 @@ var _default = function _default() {
     return;
   }
 
-  reactHotLoader.register(initState, "initState", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/reducers/supportService.js");
-  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-ssr/src/reducers/supportService.js");
+  reactHotLoader.register(initState, "initState", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/reducers/supportService.js");
+  reactHotLoader.register(_default, "default", "/Users/kumamoto-yusuke/Sites/work/react/react-redux/src/reducers/supportService.js");
   leaveModule(module);
 })();
 
 ;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
-
-/***/ }),
-
-/***/ "./src/styles/index.scss":
-/*!*******************************!*\
-  !*** ./src/styles/index.scss ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 
