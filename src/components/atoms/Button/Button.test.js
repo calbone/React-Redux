@@ -6,5 +6,5 @@ test('Buttonコンポーネント', () => {
   const text = 'ふがふが';
   const wrapper = shallow(<PrimaryButton>{text}</PrimaryButton>);
 
-  expect(wrapper.contains(text)).toEqual(false);
+  expect(wrapper.contains(text)).toEqual(true);
 });
