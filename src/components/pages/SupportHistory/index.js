@@ -1,14 +1,17 @@
+// @flow
+
 import React, { Fragment } from 'react';
 import Styles from './supportList.scss';
 import H1Heading from '@/components/molecules/Heading';
 
-export default (props) => {
+type Props = {
+  history: Object
+};
+
+export default (props: Props) => {
   const {
-    history: {
-      historyList
-    }
+    history: { historyList }
   } = props;
-  console.log('props', props);
   return (
     <Fragment>
       <H1Heading>履歴一覧</H1Heading>
