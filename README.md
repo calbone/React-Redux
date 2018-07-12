@@ -15,12 +15,12 @@ Product start
 yarn start
 ```
 
-## [wip]Running the tests
+## Running the tests
 
 Explain how to run the automated tests for this system
 
 ### Unit test
-Jest + enzyme (to be introduced)
+Jest + enzyme
 
 ```
 yarn test:unit
