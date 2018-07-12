@@ -1,11 +1,18 @@
+// @flow
 import React from 'react';
 import Styles from './style.scss';
 import PrimaryButton from '@/components/atoms/Button';
 import H1Heading from '@/components/molecules/Heading';
 import ServiceIcon from '@/components/atoms/icons/ServiceIcon';
 
-export default props => {
-  const { serviceList } = props;
+type Props = {
+  service: Object
+};
+
+export default (props: Props) => {
+  const {
+    service: { serviceList }
+  } = props;
   return (
     <div>
       <H1Heading>サポートセンター</H1Heading>

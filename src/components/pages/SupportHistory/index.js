@@ -1,5 +1,4 @@
 // @flow
-
 import React, { Fragment } from 'react';
 import Styles from './supportList.scss';
 import H1Heading from '@/components/molecules/Heading';
@@ -12,6 +11,7 @@ export default (props: Props) => {
   const {
     history: { historyList }
   } = props;
+
   return (
     <Fragment>
       <H1Heading>履歴一覧</H1Heading>
