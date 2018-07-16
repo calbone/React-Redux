@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import logger from 'redux-logger';
@@ -10,7 +11,10 @@ import '@/styles/index.scss';
 import { rootReducer } from '@/reducers';
 
 const middleWares = [logger, thunk];
-const store = createStore(rootReducer, applyMiddleware(...middleWares));
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(...middleWares))
+);
 
 ReactDOM.render(
   <Provider store={store}>

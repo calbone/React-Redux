@@ -15,34 +15,27 @@ export default (props: Props) => {
   return (
     <Fragment>
       <H1Heading>履歴一覧</H1Heading>
-      { historyList.length > 0 ?
+      {historyList.length > 0 ?
         <section className={Styles.historyListWrap}>
           <ul className={Styles.historyList}>
-            { historyList.map((history, i) => (
+            {historyList.map((history, i) => (
               <li key={i}>
                 <a className={Styles.historyItem} to={history.data.link}>
                   <div className={Styles.statusWrap}>
                     <div className={Styles.statusContent}>
                       <span className={Styles.status} />
-                      <span className={Styles.content}>{ history.data.linkDescription}</span>
+                      <span className={Styles.content}>{history.data.linkDescription}</span>
                     </div>
                     <span className={Styles.update}>
-                    <span className={Styles.data}>{history.data.date}</span>
-                    <span className={Styles.time}>{history.data.time}</span>
-                  </span>
+                      <span className={Styles.data}>{history.data.date}</span>
+                      <span className={Styles.time}>{history.data.time}</span>
+                    </span>
                   </div>
-                  {/*<WebAppIcon*/}
-                    {/*className={Styles.linkedIcon}*/}
-                    {/*iconName={'ico_arrow'}*/}
-                    {/*width={13}*/}
-                    {/*height={13}*/}
-                  {/*/>*/}
                 </a>
               </li>
             ))}
           </ul>
-        </section> : null
-      }
+        </section>: null}
     </Fragment>
   );
 };

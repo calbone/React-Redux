@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { Fragment } from 'react';
 import Styles from './style.scss';
 import PrimaryButton from '@/components/atoms/Button';
 import H1Heading from '@/components/molecules/Heading';
@@ -14,7 +14,7 @@ export default (props: Props) => {
     service: { serviceList }
   } = props;
   return (
-    <div>
+    <Fragment>
       <H1Heading>サポートセンター</H1Heading>
       <p className={Styles.pageDescription}>
         お問い合わせ内容とサポートセンターからの返信が確認できます。
@@ -44,6 +44,6 @@ export default (props: Props) => {
           })}
         </ul>
       </div>
-    </div>
+    </Fragment>
   );
 };
