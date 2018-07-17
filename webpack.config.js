@@ -7,7 +7,9 @@ const enabledSourceMap = (MODE === 'development');
 
 module.exports = {
   mode: MODE,
-  entry: ['./src/index.js'],
+  entry: {
+    output: ['css-hot-loader/hotModuleReplacement', './src/index.js']
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
@@ -36,7 +38,8 @@ module.exports = {
       },
       {
         test: /\.scss/,
-        use: ExtractTextPlugin.extract({
+        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+          fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
@@ -73,9 +76,8 @@ module.exports = {
                 sourceMap: enabledSourceMap
               }
             }
-          ],
-          fallback: 'style-loader'
-        })
+          ]
+        })),
       },
       {
         // 対象となるファイルの拡張子
