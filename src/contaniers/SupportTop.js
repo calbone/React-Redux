@@ -5,7 +5,9 @@ import { fetchService } from '@/actions/tasksActionCreator';
 
 export default connect(
   state => ({ service: state.service }),
-  { fetchService })(class SupportTopContainer extends Component {
+  { fetchService }
+)(
+  class SupportTopContainer extends Component {
     componentDidMount() {
       this.props.fetchService();
     }

@@ -5,7 +5,8 @@ import { fetchHistory } from '@/actions/supportHistory';
 
 export default connect(
   state => ({ history: state.history }),
-  { fetchHistory })(
+  { fetchHistory }
+)(
   class HistoryContainer extends Component {
     componentDidMount() {
       this.props.fetchHistory();
