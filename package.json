@@ -13,7 +13,9 @@
     "flow": "flow",
     "flow:st": "flow status",
     "test:unit": "jest",
-    "test:unit --watch": "jest --watch"
+    "test:unit --watch": "jest --watch",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.51",
@@ -55,9 +57,16 @@
     "stylelint-config-standard": "^18.2.0",
     "webpack": "^4.12.2",
     "webpack-cli": "^2.1.5",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.4",
+    "@storybook/react": "^3.4.8",
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/addons": "^3.4.8",
+    "babel-runtime": "^6.26.0"
   },
   "dependencies": {
+    "@storybook/cli": "^3.4.8",
+    "global": "^4.3.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",

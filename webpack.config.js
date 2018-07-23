@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MODE = 'development';
-const enabledSourceMap = (MODE === 'development');
+const enabledSourceMap = MODE === 'development';
 
 module.exports = {
   mode: MODE,
@@ -38,46 +38,48 @@ module.exports = {
       },
       {
         test: /\.scss/,
-        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                // CSS内のurl()メソッドの取り込みを禁止する
-                url: false,
-                // CSSの空白文字を削除する
-                minimize: true,
-                // ソースマップを有効にする
-                sourceMap: enabledSourceMap,
-                // 0 => no loaders (default);
-                // 1 => postcss-loader;
-                // 2 => postcss-loader, sass-loader
-                importLoaders: 2
+        use: ['css-hot-loader'].concat(
+          ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                  // CSS内のurl()メソッドの取り込みを禁止する
+                  url: false,
+                  // CSSの空白文字を削除する
+                  minimize: true,
+                  // ソースマップを有効にする
+                  sourceMap: enabledSourceMap,
+                  // 0 => no loaders (default);
+                  // 1 => postcss-loader;
+                  // 2 => postcss-loader, sass-loader
+                  importLoaders: 2
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  // PostCSS側でもソースマップを有効にする
+                  sourceMap: enabledSourceMap,
+                  plugins: [
+                    // Autoprefixerを有効化
+                    // ベンダープレフィックスを自動付与する
+                    require('autoprefixer')({ grid: true })
+                  ]
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  // ソースマップの利用有無
+                  sourceMap: enabledSourceMap
+                }
               }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                // PostCSS側でもソースマップを有効にする
-                sourceMap: enabledSourceMap,
-                plugins: [
-                  // Autoprefixerを有効化
-                  // ベンダープレフィックスを自動付与する
-                  require('autoprefixer')({ grid: true })
-                ]
-              }
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                // ソースマップの利用有無
-                sourceMap: enabledSourceMap
-              }
-            }
-          ]
-        })),
+            ]
+          })
+        )
       },
       {
         // 対象となるファイルの拡張子
