@@ -14,7 +14,7 @@
     "flow:st": "flow status",
     "test:unit": "jest",
     "test:unit --watch": "jest --watch",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
