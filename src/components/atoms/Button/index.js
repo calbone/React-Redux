@@ -11,6 +11,7 @@ const PrimaryButton = styled(Link)`
   word-wrap: break-word;
   padding: 15px;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     color: #a4a4a4;
