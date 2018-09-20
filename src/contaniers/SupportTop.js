@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SupportTop from '@/components/pages/SupportTop';
-import { fetchService } from '@/actions/tasksActionCreator';
+import { fetchService } from '@/actions/supportTopActionCreator';
 
 export default connect(
   state => ({ service: state.service }),
