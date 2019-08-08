@@ -1,0 +1,60 @@
+//@import '../../../../styles/variations.scss';
+
+.paginationWrap {
+    text-align: center;
+    .paginationList {
+        display: flex;
+        align-items: center;
+    }
+    li {
+        font-size: 12px;
+        color: #00bcd4;
+        cursor: pointer;
+        &:not(:last-of-type):not([class="ellipsis"]) {
+            margin-right: 12px;
+        }
+    }
+    .current {
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        background-color: #f7f7f7;
+        color: #333;
+        line-height: 24px;
+        font-size: 12px;
+        cursor: not-allowed;
+    }
+}
+.pagination {
+    display: flex;
+    align-items: center;
+}
+// .prevPage {
+//     margin-right: 11px;
+// }
+// .nextPage {
+//     margin-left: 11px;
+// }
+.prevPage,
+.nextPage {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px;
+    filter: brightness(0) invert(0.4);
+    &.inactive {
+        filter: brightness(0) invert(0.9);
+    }
+}
+.number {
+    padding: 9px;
+    border: 1px solid $color_extra-light-silver;
+    border-radius: 3px;
+    text-align: center;
+    font-size: $fs_large;
+    + .total {
+        margin-left: 10px;
+    }
+}
+.slash {
+    margin-right: .5em;
+}
